@@ -1,0 +1,17 @@
+(add-to-list 'load-path "~/.emacs.d/vendor")
+(let ((default-directory "~/.emacs.d/vendor/")) (normal-top-level-add-subdirs-to-load-path))
+(add-to-list 'load-path "~/.emacs.d/p")
+
+(require 'global)
+(require 'appearance)
+(require 'keys-binding)
+(require 'tramp-setup)
+(require 'ido-setup)
+(require 'eshell-setup)
+(require 'mode-setup)
+(require 'ac)
+(require 'yasnippet-setup)
+(require 'dired-setup)
+(require 'erc-setup)
+
+(provide 'init)

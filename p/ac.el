@@ -1,0 +1,11 @@
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+(setq ac-dwim 1)
+(setq ac-delay 0.5)
+(define-key ac-completing-map "\e" 'ac-stop)
+(set-face-background 'ac-selection-face "purple")
+(set-face-background 'ac-completion-face "steelblue")
+(setq ac-auto-start 1)
+
+(provide 'ac)
