@@ -1,3 +1,4 @@
 vendor/
 ac-comphist.dat
 emacs_env/
+erc.el
