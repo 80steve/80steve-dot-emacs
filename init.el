@@ -4,6 +4,7 @@
 
 (require 'global)
 (require 'appearance)
+(require 'modeline-setup)
 (require 'keys-binding)
 (require 'tramp-setup)
 (require 'ido-setup)
