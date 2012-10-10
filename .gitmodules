@@ -1,0 +1,18 @@
+[submodule "vendor/nyan-mode"]
+	path = vendor/nyan-mode
+	url = git://github.com/TeMPOraL/nyan-mode.git
+[submodule "vendor/magit"]
+	path = vendor/magit
+	url = git://github.com/magit/magit.git
+[submodule "vendor/yasnippet"]
+	path = vendor/yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "vendor/js2"]
+	path = vendor/js2
+    url = git://github.com/mooz/js2-mode.git
+[submodule "vendor/window-numbering"]
+	path = vendor/window-numbering
+    url = git://github.com/nschum/window-numbering.el.git
+[submodule "vendor/multi-web-mode"]
+	path = vendor/multi-web-mode
+    url = git://github.com/fgallina/multi-web-mode.git
