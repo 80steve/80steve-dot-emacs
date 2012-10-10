@@ -14,16 +14,13 @@
 (global-hl-line-mode 1)
 (show-paren-mode t)
 (setq delete-by-moving-to-trash t)
+(setq ns-pop-up-frames nil) ; show in current frame
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq initial-frame-alist '( (top . 10) (left . 0) (width . 250) (height . 85) ))
 
 ;; mode line info display
 (setq line-number-mode t)
 (setq column-number-mode t)
-(setq display-time-mode 1)
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-(display-time)
 
 ;; config tab
 (setq-default tab-width 4)

@@ -12,6 +12,7 @@
 (require 'mode-setup)
 (require 'ac)
 (require 'yasnippet-setup)
+(require 'magit-setup)
 (require 'dired-setup)
 (require 'erc-setup)
 
