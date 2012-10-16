@@ -30,6 +30,24 @@
 (global-set-key (kbd "M-k") 'kill-this-buffer)
 (global-set-key [kp-delete] 'delete-char)
 
+;; Select Word
+(defun select-word (start end)
+  (interactive "r")
+  (let (pt (mbh mark-even-if-inactive))
+    (if (region-active-p)
+        (skip-chars-forward " "))
+    (skip-chars-backward "-_A-Za-z0-9")
+    (setq pt (point))
+    (skip-chars-forward "-_A-Za-z0-9")
+    (if (region-active-p)
+        (push-mark (region-beginning))
+      (progn (if (eq (mark) nil)
+                 (set-mark (region-beginning)))
+             (set-mark pt)))))
+;      (set-mark pt))))
+
+(global-set-key "\C-cw" 'select-word)
+
 ;; Copy Line
 (defun copy-line ()
   (interactive)
