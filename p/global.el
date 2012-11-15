@@ -4,6 +4,7 @@
 (setq-default major-mode 'text-mode)
 (set-language-environment 'UTF-8)
 (scroll-bar-mode -1)
+(tool-bar-mode -1)
 (delete-selection-mode 1)
 (global-linum-mode 1)
 (setq linum-format "%d ")
@@ -16,7 +17,7 @@
 (setq delete-by-moving-to-trash t)
 (setq ns-pop-up-frames nil) ; show in current frame
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq initial-frame-alist '( (top . 10) (left . 0) (width . 250) (height . 85) ))
+(setq initial-frame-alist '( (top . 10) (left . 20) (width . 250) (height . 85) ))
 
 ;; mode line info display
 (setq line-number-mode t)
