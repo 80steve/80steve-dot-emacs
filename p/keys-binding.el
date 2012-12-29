@@ -88,4 +88,41 @@
 
 (global-set-key [(control shift down)] 'move-line-down)
 
+;; mark line
+(defun mark-line (&optional arg)
+  "Marks a line"
+  (interactive "p")
+  (beginning-of-line)
+  (push-mark (point) nil t)
+  (end-of-line))
+
+(global-set-key (kbd "C-c l") 'mark-line)
+
+;; open new line below
+(defun open-next-line (arg)
+  "Move to the next line and then opens a line.
+    See also `newline-and-indent'."
+  (interactive "p")
+  (end-of-line)
+  (open-line arg)
+  (next-line 1)
+  (when newline-and-indent
+    (indent-according-to-mode)))
+(global-set-key (kbd "C-o") 'open-next-line)
+
+;; open new line above
+(defun open-previous-line (arg)
+  "Open a new line before the current one. 
+     See also `newline-and-indent'."
+  (interactive "p")
+  (beginning-of-line)
+  (open-line arg)
+  (when newline-and-indent
+    (indent-according-to-mode)))
+(global-set-key (kbd "M-o") 'open-previous-line)
+
+(defvar newline-and-indent t
+  "Modify the behavior of the open-*-line functions to cause them to
+autoindent.")
+
 (provide 'keys-binding)

@@ -9,7 +9,8 @@
 (global-linum-mode 1)
 (setq linum-format "%d ")
 (global-font-lock-mode 1) ; function
-(setq-default fill-column 80)
+(setq font-lock-maximum-decoration t)
+(setq-default fill-column 120)
 (setq auto-fill-mode 1)
 (transient-mark-mode t)
 (global-hl-line-mode 1)
@@ -17,7 +18,11 @@
 (setq delete-by-moving-to-trash t)
 (setq ns-pop-up-frames nil) ; show in current frame
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq initial-frame-alist '( (top . 10) (left . 20) (width . 250) (height . 85) ))
+(setq-default require-final-newline t)
+(setq next-line-add-newlines nil)
+(setq message-log-max 256)
+(setq initial-frame-alist '( (top . 10) (left . 30) (width . 185) (height . 55) ))
+
 
 ;; mode line info display
 (setq line-number-mode t)
@@ -38,9 +43,28 @@
 
 ;; scroll config
 (setq scroll-step 1)
-(setq scroll-conservatively 10000)
+(setq scroll-conservatively 5)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+
+;; Skeleton pairs
+(setq skeleton-pair t)
+(global-set-key "(" 'skeleton-pair-insert-maybe)
+(global-set-key "[" 'skeleton-pair-insert-maybe)
+(global-set-key "{" 'skeleton-pair-insert-maybe)
+(global-set-key "\"" 'skeleton-pair-insert-maybe)
+
+;; Default buffer listing to ibuffer
+(defalias 'list-buffers 'ibuffer)
+
+;; Remove trailing whitespace when save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; vendor
+
+;; Auto Pair
+;(require 'autopair)
+;(autopair-global-mode)
 
 ;; Window-Numbering Mode
 (require 'window-numbering)
