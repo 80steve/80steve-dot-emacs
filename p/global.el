@@ -43,8 +43,8 @@
 
 ;; scroll config
 (setq scroll-step 1)
-(setq scroll-conservatively 5)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+;(setq scroll-conservatively 5)
+(setq mouse-wheel-scroll-amount '(3))
 (setq mouse-wheel-progressive-speed nil)
 
 ;; Skeleton pairs
@@ -73,6 +73,9 @@
 ;; Browse Kill Ring
 (require 'browse-kill-ring)
 (global-set-key "\C-cy" '(lambda () (interactive) (popup-menu 'yank-menu)))
+
+;; Flymake Cursor
+(require 'flymake-cursor)
 
 ;; end vendor
 
