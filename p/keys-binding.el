@@ -98,6 +98,16 @@
 
 (global-set-key (kbd "C-c l") 'mark-line)
 
+;; Comment line or region
+(defun comment-line-or-region ()
+  "Comment line or region if active"
+  (interactive)
+  (if (region-active-p)
+      (comment-or-uncomment-region (region-beginning) (region-end))
+    (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
+
+(global-set-key (kbd "s-/") 'comment-line-or-region)
+
 ;; open new line below
 (defun open-next-line (arg)
   "Move to the next line and then opens a line.
@@ -105,14 +115,14 @@
   (interactive "p")
   (end-of-line)
   (open-line arg)
-  (next-line 1)
+  (forward-list 1)
   (when newline-and-indent
     (indent-according-to-mode)))
 (global-set-key (kbd "C-o") 'open-next-line)
 
 ;; open new line above
 (defun open-previous-line (arg)
-  "Open a new line before the current one. 
+  "Open a new line before the current one.
      See also `newline-and-indent'."
   (interactive "p")
   (beginning-of-line)
