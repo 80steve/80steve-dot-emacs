@@ -15,7 +15,6 @@
 (transient-mark-mode t)
 (global-hl-line-mode 1)
 (show-paren-mode t)
-(setq delete-by-moving-to-trash t)
 (setq ns-pop-up-frames nil) ; show in current frame
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default require-final-newline t)
@@ -47,12 +46,8 @@
 (setq mouse-wheel-scroll-amount '(3))
 (setq mouse-wheel-progressive-speed nil)
 
-;; Skeleton pairs
-(setq skeleton-pair t)
-(global-set-key "(" 'skeleton-pair-insert-maybe)
-(global-set-key "[" 'skeleton-pair-insert-maybe)
-(global-set-key "{" 'skeleton-pair-insert-maybe)
-(global-set-key "\"" 'skeleton-pair-insert-maybe)
+;; Electric Pair Mode to replace skeleton pairs
+(electric-pair-mode t)
 
 ;; Default buffer listing to ibuffer
 (defalias 'list-buffers 'ibuffer)
