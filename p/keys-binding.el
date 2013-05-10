@@ -69,7 +69,7 @@
       (setq kill-ring '()))
     (goto-char org)))
 
-(global-set-key "\C-cd" 'duplicate-line)
+(global-set-key "\C-ce" 'duplicate-line)
 
 ;; move line up
 (defun move-line-up ()
@@ -107,6 +107,13 @@
     (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
 
 (global-set-key (kbd "s-/") 'comment-line-or-region)
+
+(defun smart-kill-whole-line (&optional arg)
+  "A simple wrapper around `kill-whole-line' that respects indentation."
+  (interactive "P")
+  (kill-whole-line arg)
+  (back-to-indentation))
+(global-set-key [remap kill-whole-line] 'smart-kill-whole-line)
 
 ;; open new line below
 (defun open-next-line (arg)

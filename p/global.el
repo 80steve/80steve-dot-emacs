@@ -15,6 +15,8 @@
 (transient-mark-mode t)
 (global-hl-line-mode 1)
 (show-paren-mode t)
+(blink-cursor-mode -1)
+(setq indicate-empty-lines t)
 (setq ns-pop-up-frames nil) ; show in current frame
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default require-final-newline t)
@@ -48,6 +50,9 @@
 
 ;; Electric Pair Mode to replace skeleton pairs
 (electric-pair-mode t)
+
+;; Electric Indent Mode, new minor mode 24.1 for triggering reindentation
+(electric-indent-mode t)
 
 ;; Default buffer listing to ibuffer
 (defalias 'list-buffers 'ibuffer)
