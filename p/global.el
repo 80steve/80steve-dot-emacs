@@ -16,14 +16,17 @@
 (global-hl-line-mode 1)
 (show-paren-mode t)
 (blink-cursor-mode -1)
-(setq indicate-empty-lines t)
+(setq-default indicate-empty-lines 1)
 (setq ns-pop-up-frames nil) ; show in current frame
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default require-final-newline t)
 (setq next-line-add-newlines nil)
 (setq message-log-max 256)
-(setq initial-frame-alist '( (top . 10) (left . 30) (width . 185) (height . 55) ))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+
+;; change default directory
+(setq default-directory "~/")
 
 ;; mode line info display
 (setq line-number-mode t)

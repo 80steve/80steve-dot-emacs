@@ -1,7 +1,7 @@
-;(require 'monokai-theme)
-(require 'solarized-dark-theme)
-(set-face-background 'hl-line "grey20")
-(set-face-background 'region "#2F133B") ;; Search Highlight Color
+(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/solarized")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/themes")
+(load-theme 'tomorrow-night t)
+
 (set-frame-font "Droid_Sans_Mono-12")
 
 (require 'powerline)

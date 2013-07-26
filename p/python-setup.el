@@ -1,5 +1,5 @@
 (setenv "PYMACS_PYTHON" "~/.emacs.d/emacs_env/bin/python")
-(require 'python-mode)
+(require 'python)
 
 (require 'pymacs)
 (autoload 'pymacs-apply "pymacs")
