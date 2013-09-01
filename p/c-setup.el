@@ -1,4 +1,5 @@
-(setq-default c-basic-offset 4
+(setq-default c-default-style "linux"
+              c-basic-offset 4
               c-indent-tabs-mode t)
 (defun my-c-mode-hook ()
   (c-set-offset 'substatement-open 0)
