@@ -12,8 +12,10 @@
 (setq auto-mode-alist (cons '("\\.engine$" . php-mode) auto-mode-alist))
 
 (require 'web-mode)
-(setq web-mode-disable-auto-pairing t)
 
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
+(setq web-mode-engines-alist
+      '(("django" . "\\.djhtml$")
+        ("django" . "\\.html$")))
 
 (provide 'mode-setup)
