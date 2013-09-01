@@ -1,10 +1,6 @@
 (require 'php-mode)
 (defun clean-php-mode ()
-  (setq c-basic-offset 4)
-  (c-set-offset 'case-label '+)
-  (c-set-offset 'arglist-close 0)
-  (c-set-offset 'arglist-intro '+)
-  (c-set-offset 'arglist-cont-nonempty 'c-lineup-math))
+  (setq c-basic-offset 4))
 (add-hook 'php-mode-hook 'clean-php-mode)
 
 (defun phplin-this-file ()

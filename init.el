@@ -16,5 +16,6 @@
 (require 'magit-setup)
 (require 'dired-setup)
 (require 'erc-setup)
+(require 'projectile-setup)
 
 (provide 'init)
