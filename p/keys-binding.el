@@ -122,7 +122,7 @@
   (interactive "p")
   (end-of-line)
   (open-line arg)
-  (forward-list 1)
+  (next-line 1)
   (when newline-and-indent
     (indent-according-to-mode)))
 (global-set-key (kbd "C-o") 'open-next-line)
@@ -139,7 +139,15 @@
 (global-set-key (kbd "M-o") 'open-previous-line)
 
 (defvar newline-and-indent t
-  "Modify the behavior of the open-*-line functions to cause them to
-autoindent.")
+  "Modify the behavior of the open-*-line functions to cause them to autoindent.")
+
+(defun tab-to-spaces ()
+  "Convert tab to spaces"
+  (interactive)
+  (save-excursion (untabify (point-min) (point-max))))
+
+(defun pretty-print-json(&optional b e)
+  (interactive "r")
+  (shell-command-on-region b e "python -m json.tool" (current-buffer) t))
 
 (provide 'keys-binding)
