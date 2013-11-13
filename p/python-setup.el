@@ -27,6 +27,9 @@
 (set-face-background 'highlight-indentation-face "#454545")
 (set-face-background 'highlight-indentation-current-column-face "#8A8A8A")
 
+(add-hook 'python-mode-hook '(lambda ()
+                               (setq electric-indent-mode nil)))
+
 ;; Flymake
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
