@@ -146,6 +146,10 @@
   (interactive)
   (save-excursion (untabify (point-min) (point-max))))
 
+;; remap C-; for mark
+(global-set-key (kbd "C-;") 'set-mark-command)
+
+;; reindent json
 (defun pretty-print-json(&optional b e)
   (interactive "r")
   (shell-command-on-region b e "python -m json.tool" (current-buffer) t))

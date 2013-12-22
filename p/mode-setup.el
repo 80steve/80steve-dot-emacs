@@ -1,5 +1,4 @@
-(autoload 'c-mode "c-setup" "C Mode." t)
-(autoload 'c++-mode "c-setup" "C Mode." t)
+(require 'c-setup)
 (autoload 'php-mode "php-setup" "PHP mode." t)
 (autoload 'python-mode "python-setup" "Python Mode." t)
 (autoload 'js2-mode "js2" "Javascript Mode." t)
