@@ -1,8 +1,11 @@
 (require 'c-setup)
+;(autoload 'c-mode "c-setup" "C Mode." t)
+;(autoload 'c++-mode "c-setup" "C Mode." t)
 (autoload 'php-mode "php-setup" "PHP mode." t)
 (autoload 'python-mode "python-setup" "Python Mode." t)
 (autoload 'js2-mode "js2" "Javascript Mode." t)
 (autoload 'multi-web-mode "multi-web-setup" "Multi Web Mode." t)
+(autoload 'coffee-mode "coffee-setup" "CoffeeScript Mode." t)
 
 (setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.module$" . php-mode) auto-mode-alist))

@@ -3,6 +3,9 @@
 (load-theme 'solarized-dark t)
 
 (set-face-attribute 'default nil :family "Droid_Sans_Mono")
+(set-fontset-font "fontset-default"
+                  'unicode
+                  '("Heiti TC"))
 
 (require 'powerline)
 (custom-set-faces
