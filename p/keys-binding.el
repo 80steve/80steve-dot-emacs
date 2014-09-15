@@ -150,8 +150,21 @@
 (global-set-key (kbd "C-;") 'set-mark-command)
 
 ;; reindent json
-(defun pretty-print-json(&optional b e)
+(defun pretty-print-json ()
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (point-min) (point-max) "export PYTHONIOENCODING=UTF-8; python -c 'import sys, json; data=sys.stdin.read(); print json.dumps(json.loads(data), sort_keys=True, indent=4).decode(\"unicode-escape\")'" (current-buffer) t)))
+
+(defun fun-pretty-print-json(&optional b e)
   (interactive "r")
   (shell-command-on-region b e "python -m json.tool" (current-buffer) t))
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<down>"))
 
 (provide 'keys-binding)
