@@ -6,7 +6,7 @@
 (set-language-environment 'utf-8)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(menu-bar-mode -1)
+; (menu-bar-mode -1)
 (delete-selection-mode 1)
 (global-linum-mode 1)
 (setq linum-format "%d ")
@@ -24,8 +24,18 @@
 (setq-default require-final-newline t)
 (setq next-line-add-newlines nil)
 (setq message-log-max 256)
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(setq default-frame-alist '(
+                            (top . 35)
+                            (left . 35)
+                            (width . 160)
+                            (height . 45)
+                            ))
 
+
+(setq echo-keystrokes 0.1)
+(setq use-dialog-box nil)
+(setq visible-bell t)
 
 
 ;; change default directory
@@ -53,12 +63,13 @@
 ;(setq scroll-conservatively 5)
 (setq mouse-wheel-scroll-amount '(3))
 (setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse 't)
 
 ;; Electric Pair Mode to replace skeleton pairs
-(electric-pair-mode t)
+;; (electric-pair-mode t)
 
 ;; Electric Indent Mode, new minor mode 24.1 for triggering reindentation
-(electric-indent-mode t)
+;; (electric-indent-mode t)
 
 ;; Default buffer listing to ibuffer
 (defalias 'list-buffers 'ibuffer)
@@ -66,11 +77,22 @@
 ;; Remove trailing whitespace when save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(global-auto-revert-mode 1)
+
+;; Auto cleanup old buffer
+(require 'midnight)
+
 ;; vendor
 
 ;; Auto Pair
 ;(require 'autopair)
 ;(autopair-global-mode)
+
+;; Sticky Windows
+(require 'dedicated)
+
+;; ANZU - showing match count in modeline
+(global-anzu-mode +1)
 
 ;; Window-Numbering Mode
 (require 'window-numbering)
@@ -79,9 +101,6 @@
 ;; Browse Kill Ring
 (require 'browse-kill-ring)
 (global-set-key "\C-cy" '(lambda () (interactive) (popup-menu 'yank-menu)))
-
-;; Flymake Cursor
-(require 'flymake-cursor)
 
 ;; end vendor
 

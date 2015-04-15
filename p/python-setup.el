@@ -1,9 +1,14 @@
-(require 'python-mode)
+(require 'python)
+
+(venv-workon "emacs")
 
 (setq py-electric-colon-active-p t)
 (setq py-electric-colon-greedy-p t)
 (setq py-electric-colon-newline-and-indent-p t)
 (setq py-empty-line-closes-p t)
+
+(setq-default flycheck-flake8rc
+              (expand-file-name "~/.emacs.d/conf/flake8rc"))
 
 (require 'highlight-indentation)
 (add-hook 'python-mode-hook 'highlight-indentation-mode)
@@ -12,25 +17,13 @@
 
 (setq jedi:setup-keys t)
 (require 'jedi)
-(setq jedi:server-command
-      (list "~/.virtualenvs/emacs/bin/python" jedi:server-script))
 (setq jedi:complete-on-dot t)
 (add-hook 'python-mode-hook 'jedi:setup)
 
+(defun my-python-hook ()
+  (define-key python-mode-map (kbd "RET") 'newline-and-indent))
+(add-hook 'python-mode-hook 'my-python-hook)
 (add-hook 'python-mode-hook '(lambda ()
                                (setq electric-indent-mode nil)))
-
-;; Flymake
-(when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-           (local-file (file-relative-name
-                        temp-file
-                        (file-name-directory buffer-file-name))))
-      (list "~/.emacs.d/pycheckers" (list local-file))))
-
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-pyflakes-init)))
 
 (provide 'python-setup)

@@ -1,4 +1,4 @@
-(require 'c-setup)
+;(require 'c-setup)
 ;(autoload 'c-mode "c-setup" "C Mode." t)
 ;(autoload 'c++-mode "c-setup" "C Mode." t)
 (autoload 'php-mode "php-setup" "PHP mode." t)
@@ -7,6 +7,7 @@
 ; try shutting off the warning from php-indent
 (setq php-mode-warn-if-mumamo-off nil)
 
+(require 'js2-mode)
 (setq js2-basic-offset 2)
 (autoload 'js2-mode "js2" "Javascript Mode." t)
 (autoload 'coffee-mode "coffee-setup" "CoffeeScript Mode." t)
@@ -23,5 +24,8 @@
 (setq web-mode-engines-alist
       '(("django" . "\\.djhtml$")
         ("django" . "\\.html$")))
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (provide 'mode-setup)
