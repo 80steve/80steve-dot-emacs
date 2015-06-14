@@ -1,3 +1,6 @@
+;;; c-setup.el --- C Setup
+;;; Commentary:
+;;; Code:
 (setq-default c-default-style "linux"
               c-basic-offset 4
               c-indent-tabs-mode t)
@@ -9,3 +12,4 @@
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
 
 (provide 'c-setup)
+;;; c-setup.el ends here

@@ -1,4 +1,6 @@
-;; general config
+;;; Package --- Global Config
+;;; Commentary:
+;;; Code:
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 (setq initial-major-mode 'text-mode)
@@ -31,6 +33,12 @@
                             (width . 160)
                             (height . 45)
                             ))
+
+;; Make sure scrollbar doesn't show even on emacsclient
+(defun disable-scrollbar (_)
+  "Disable scrollbar."
+  (scroll-bar-mode -1))
+(add-to-list 'after-make-frame-functions 'disable-scrollbar)
 
 
 (setq echo-keystrokes 0.1)
@@ -66,10 +74,10 @@
 (setq mouse-wheel-follow-mouse 't)
 
 ;; Electric Pair Mode to replace skeleton pairs
-;; (electric-pair-mode t)
+(electric-pair-mode t)
 
 ;; Electric Indent Mode, new minor mode 24.1 for triggering reindentation
-;; (electric-indent-mode t)
+(electric-indent-mode t)
 
 ;; Default buffer listing to ibuffer
 (defalias 'list-buffers 'ibuffer)
@@ -87,6 +95,9 @@
 ;; Auto Pair
 ;(require 'autopair)
 ;(autopair-global-mode)
+(require 'smartparens)
+(require 'smartparens-config)
+(smartparens-global-mode)
 
 ;; Sticky Windows
 (require 'dedicated)
@@ -105,3 +116,4 @@
 ;; end vendor
 
 (provide 'global)
+;;; global.el ends here

@@ -167,4 +167,10 @@
 (global-unset-key (kbd "<up>"))
 (global-unset-key (kbd "<down>"))
 
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; make sure the marked window stay where it is
+(require 'dedicated)
+(global-set-key (kbd "C-c z d") 'dedicated-mode)
+
 (provide 'keys-binding)

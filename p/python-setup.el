@@ -1,5 +1,6 @@
 (require 'python)
 
+;(setq python-shell-virtualenv-path "~/.virtualenvs")
 (venv-workon "emacs")
 
 (setq py-electric-colon-active-p t)
@@ -17,6 +18,8 @@
 
 (setq jedi:setup-keys t)
 (require 'jedi)
+;; (setq jedi:server-command
+;;       (list "~/.virtualenvs/emacs/bin/python" jedi:server-script))
 (setq jedi:complete-on-dot t)
 (add-hook 'python-mode-hook 'jedi:setup)
 
