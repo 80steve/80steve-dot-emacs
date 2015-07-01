@@ -10,7 +10,7 @@
 ;; Adopted from http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/
 
 (defvar editor-packages
-  '(ace-jump-mode anzu auto-complete browse-kill-ring coffee-mode dedicated expand-region
+  '(ace-jump-mode anzu auto-complete browse-kill-ring coffee-mode dedicated dropdown-list expand-region
                   flycheck git-gutter git-timemachine go-autocomplete go-mode helm helm-projectile highlight-indentation
                   idle-highlight-mode jedi js2-mode less-css-mode magit markdown-mode monokai-theme multiple-cursors php-mode
                   powerline prodigy projectile python-django rainbow-delimiters rainbow-mode smartparens virtualenvwrapper
