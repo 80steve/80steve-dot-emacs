@@ -1,3 +1,6 @@
 ac-comphist.dat
 emacs_env/
 p/erc-setup.el
+elpa/
+recentf
+projectile-bookmarks.eld
