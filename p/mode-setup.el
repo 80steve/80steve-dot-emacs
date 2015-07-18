@@ -38,5 +38,16 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; Modeline Setup
+(require 'diminish)
+(eval-after-load "projectile" '(diminish 'projectile-mode " Ⓟ "))
+(eval-after-load "helm" '(diminish 'helm-mode " ♖ "))
+(eval-after-load "auto-complete" '(diminish 'auto-complete-mode " ✎ "))
+(eval-after-load "yas-minor-mode" '(diminish 'yas-minor-mode))
+(eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
+(eval-after-load "flycheck" '(diminish 'flycheck-mode))
+(eval-after-load "anzu" '(diminish 'anzu-mode))
+(eval-after-load "golden-ratio" '(diminish 'golden-ratio-mode " 𝚽 "))
+
 (provide 'mode-setup)
 ;;; mode-setup ends here
