@@ -113,6 +113,10 @@
 (require 'browse-kill-ring)
 (global-set-key "\C-cy" '(lambda () (interactive) (popup-menu 'yank-menu)))
 
+;; Golden Ratio for Windows Split
+(require 'golden-ratio)
+(golden-ratio-mode 1)
+
 ;; end vendor
 
 (provide 'global)
