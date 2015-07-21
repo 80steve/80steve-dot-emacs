@@ -40,14 +40,14 @@
 
 ;; Modeline Setup
 (require 'diminish)
-(eval-after-load "projectile" '(diminish 'projectile-mode " Ⓟ "))
-(eval-after-load "helm" '(diminish 'helm-mode " ♖ "))
-(eval-after-load "auto-complete" '(diminish 'auto-complete-mode " ✎ "))
+(eval-after-load "projectile" '(diminish 'projectile-mode " P "))
+(eval-after-load "helm" '(diminish 'helm-mode " H "))
+(eval-after-load "auto-complete" '(diminish 'auto-complete-mode " AC "))
 (eval-after-load "yas-minor-mode" '(diminish 'yas-minor-mode))
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
 (eval-after-load "flycheck" '(diminish 'flycheck-mode))
 (eval-after-load "anzu" '(diminish 'anzu-mode))
-(eval-after-load "golden-ratio" '(diminish 'golden-ratio-mode " 𝚽 "))
+(eval-after-load "golden-ratio" '(diminish 'golden-ratio-mode " G "))
 
 (provide 'mode-setup)
 ;;; mode-setup ends here
