@@ -15,6 +15,8 @@
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 
+(global-set-key (kbd "s-i") 'iwb)
+
 ;; Search Occur Mode
 (define-key isearch-mode-map (kbd "C-o")
   (lambda ()
@@ -58,11 +60,14 @@
 ;; Duplicate Line
 (defun duplicate-line ()
   (interactive)
-  (let ((org (point)))
+  (let (beg end (org (point)))
     (copy-line)
     (end-of-line)
     (newline-and-indent)
     (yank)
+    (setq beg (line-beginning-position))
+    (setq end (line-end-position))
+    (indent-region beg end)
     (if (/= (length (cdr kill-ring)) 0)
         (progn (setq kill-ring (cdr kill-ring))
                      (rotate-yank-pointer 1))
@@ -92,7 +97,7 @@
 (defun mark-line (&optional arg)
   "Marks a line"
   (interactive "p")
-  (beginning-of-line)
+  (back-to-indentation)
   (push-mark (point) nil t)
   (end-of-line))
 
@@ -154,6 +159,7 @@
   (interactive)
   (save-excursion
     (shell-command-on-region (point-min) (point-max) "export PYTHONIOENCODING=UTF-8; python -c 'import sys, json; data=sys.stdin.read(); print json.dumps(json.loads(data), sort_keys=True, indent=4).decode(\"unicode-escape\")'" (current-buffer) t)))
+(global-set-key (kbd "M-p") 'pretty-print-json)
 
 (defun fun-pretty-print-json(&optional b e)
   (interactive "r")
