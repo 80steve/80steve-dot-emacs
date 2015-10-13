@@ -12,7 +12,11 @@
       helm-buffers-fuzzy-matching           t
       helm-move-to-line-cycle-in-source     t
       helm-ff-search-library-in-sexp        t
-      helm-ff-file-name-history-use-recentf t)
+      helm-ff-file-name-history-use-recentf t
+      helm-candidate-number-limit           25)
+
+(helm-autoresize-mode 1)
+(setq helm-M-x-fuzzy-match t)
 
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
