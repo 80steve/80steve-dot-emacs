@@ -22,7 +22,8 @@
 
 (add-hook 'js2-mode-hook 'modify-syntax-table-for-jsx)
 
-(setq auto-mode-alist (cons '("\\.php$" . web-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.module$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.inc$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.install$" . php-mode) auto-mode-alist))
