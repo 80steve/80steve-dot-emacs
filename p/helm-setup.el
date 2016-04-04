@@ -13,9 +13,9 @@
       helm-move-to-line-cycle-in-source     t
       helm-ff-search-library-in-sexp        t
       helm-ff-file-name-history-use-recentf t
+      helm-ff-guess-ffap-filenames          nil
       helm-candidate-number-limit           25)
 
-(helm-autoresize-mode 1)
 (setq helm-M-x-fuzzy-match t)
 
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
@@ -41,6 +41,7 @@
 (global-set-key (kbd "C-h C-l") 'helm-locate-library)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 (global-set-key (kbd "s-r") 'helm-imenu)
+(global-set-key (kbd "C-c i") 'helm-imenu)
 
 (define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
 

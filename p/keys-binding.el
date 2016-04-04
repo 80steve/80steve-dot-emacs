@@ -183,5 +183,6 @@
 (require 'dedicated)
 (global-set-key (kbd "C-c z d") 'dedicated-mode)
 
+(global-set-key (kbd "C-c g") 'goto-line)
 (provide 'keys-binding)
 ;;; keys-binding ends here
