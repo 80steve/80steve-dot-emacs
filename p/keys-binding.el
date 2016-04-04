@@ -1,3 +1,7 @@
+;;; package --- Keys Bindings Setup
+;;; Commentary:
+;;; Code:
+
 ;; Reload dot Emacs
 (defun reload-dot-emacs()
   "reload dot emacs file"
@@ -9,7 +13,7 @@
 
 ;; Indent Whole Buffer
 (defun iwb ()
-  "indent whole buffer"
+  "Indent whole buffer."
   (interactive)
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
@@ -95,7 +99,7 @@
 
 ;; mark line
 (defun mark-line (&optional arg)
-  "Marks a line"
+  "Marks a line."
   (interactive "p")
   (back-to-indentation)
   (push-mark (point) nil t)
@@ -105,7 +109,7 @@
 
 ;; Comment line or region
 (defun comment-line-or-region ()
-  "Comment line or region if active"
+  "Comment line or region if active."
   (interactive)
   (if (region-active-p)
       (comment-or-uncomment-region (region-beginning) (region-end))
@@ -180,3 +184,4 @@
 (global-set-key (kbd "C-c z d") 'dedicated-mode)
 
 (provide 'keys-binding)
+;;; keys-binding ends here

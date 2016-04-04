@@ -1,3 +1,6 @@
+;;; package --- Workgroups2 Setup
+;;; Commentary:
+;;; Code:
 (require 'workgroups2)
 
 (setq wg-prefix-key (kbd "C-c z"))
@@ -16,3 +19,4 @@
 (workgroups-mode 1)
 
 (provide 'wg-setup)
+;;; wg-setup ends here
