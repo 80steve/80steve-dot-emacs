@@ -16,12 +16,6 @@
 (autoload 'js2-mode "js2" "Javascript Mode." t)
 (autoload 'coffee-mode "coffee-setup" "CoffeeScript Mode." t)
 
-(defun modify-syntax-table-for-jsx ()
-  (modify-syntax-entry ?< "(>")
-  (modify-syntax-entry ?> ")<"))
-
-(add-hook 'js2-mode-hook 'modify-syntax-table-for-jsx)
-
 (setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.module$" . php-mode) auto-mode-alist))
@@ -32,12 +26,15 @@
 
 (require 'web-mode)
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.jsx$" . web-mode) auto-mode-alist))
 (setq web-mode-engines-alist
       '(("django" . "\\.djhtml$")
-        ("django" . "\\.html$")))
+        ("django" . "\\.html$")
+        ("jsx" . "\\.jsx$")))
 (setq web-mode-enable-current-element-highlight t)
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 4)
 (setq web-mode-enable-auto-pairing t)
 
 (require 'rainbow-delimiters)
