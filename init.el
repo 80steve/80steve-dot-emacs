@@ -33,6 +33,7 @@
 (require 'mc-setup)
 (require 'wg-setup)
 (require 'flycheck-setup)
+(require 'eb-setup)
 (require 'org-setup)
 
 (provide 'init)
