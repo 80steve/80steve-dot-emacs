@@ -30,8 +30,8 @@
 (setq default-frame-alist '(
                             (top . 35)
                             (left . 35)
-                            (width . 160)
-                            (height . 45)
+                            (width . 200)
+                            (height . 55)
                             ))
 
 ;; Make sure scrollbar doesn't show even on emacsclient
@@ -43,7 +43,8 @@
 
 (setq echo-keystrokes 0.1)
 (setq use-dialog-box nil)
-(setq visible-bell t)
+(setq visible-bell 0)
+(setq ring-bell-function 'ignore)
 
 
 ;; change default directory
