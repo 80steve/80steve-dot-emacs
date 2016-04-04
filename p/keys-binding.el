@@ -179,6 +179,12 @@
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
+;; OrgMode Files
+(global-set-key (kbd "C-c o")
+                (lambda () (interactive) (find-file "~/Documents/OrgMode/personal.org")))
+(global-set-key (kbd "C-c n")
+                (lambda () (interactive) (find-file "~/Documents/OrgMode/notes.org")))
+
 ;; make sure the marked window stay where it is
 (require 'dedicated)
 (global-set-key (kbd "C-c z d") 'dedicated-mode)
