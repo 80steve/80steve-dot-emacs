@@ -184,5 +184,7 @@
 (global-set-key (kbd "C-c z d") 'dedicated-mode)
 
 (global-set-key (kbd "C-c g") 'goto-line)
+(global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
+
 (provide 'keys-binding)
 ;;; keys-binding ends here
