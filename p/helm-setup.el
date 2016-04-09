@@ -22,6 +22,7 @@
 (global-unset-key (kbd "C-x c"))
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
 
 (define-key helm-command-map (kbd "o")     'helm-occur)
 (define-key helm-command-map (kbd "g")     'helm-do-grep)
