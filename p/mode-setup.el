@@ -1,14 +1,12 @@
 ;;; package --- Mode Setup
 ;;; Commentary:
 ;;; Code:
-;(require 'c-setup)
-;(autoload 'c-mode "c-setup" "C Mode." t)
-;(autoload 'c++-mode "c-setup" "C Mode." t)
 (autoload 'php-mode "php-setup" "PHP mode." t)
 (autoload 'python-mode "python-setup" "Python Mode." t)
 (autoload 'go-mode "go-setup" "Go Mode." t)
 
 ; try shutting off the warning from php-indent
+(defvar php-mode-warn-if-mumamo-off)
 (setq php-mode-warn-if-mumamo-off nil)
 
 (require 'js2-mode)
@@ -28,19 +26,26 @@
 (setq auto-mode-alist (cons '("\\.inc$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.install$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.engine$" . php-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.js$" . js2-mode) auto-mode-alist))
 
 (require 'web-mode)
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
+;(setq auto-mode-alist (cons '("\\.js$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.jsx$" . web-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\index.ios.js$" . web-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\index.android.js$" . web-mode) auto-mode-alist))
+
+(defvar web-mode-content-types-alist)
+(setq web-mode-content-types-alist '(("jsx" . "\\.jsx?$")))
+
+(defvar web-mode-engines-alist)
 (setq web-mode-engines-alist
       '(("django" . "\\.djhtml$")
-        ("django" . "\\.html$")
-        ("jsx" . "\\.jsx$")))
+        ("django" . "\\.html$")))
+
 (setq web-mode-enable-current-element-highlight t)
-(setq web-mode-markup-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
+(setq web-mode-markup-indent-offset 2)
 (setq web-mode-enable-auto-pairing t)
 
 (require 'rainbow-delimiters)
