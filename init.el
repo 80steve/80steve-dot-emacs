@@ -28,6 +28,7 @@
 (require 'dired-setup)
 ;(require 'erc-setup)
 ;(require 'ack-setup)
+(require 'ag-setup)
 (require 'projectile-setup)
 (require 'ace-jump-setup)
 (require 'mc-setup)
