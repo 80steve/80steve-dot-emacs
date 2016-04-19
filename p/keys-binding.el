@@ -32,6 +32,11 @@
 ;; Windows Move
 (require 'windmove)
 (windmove-default-keybindings 'control)
+;; For Terminal Keybindings
+(global-set-key (kbd "M-[ d") 'windmove-left)
+(global-set-key (kbd "M-[ c") 'windmove-right)
+(global-set-key (kbd "M-[ a") 'windmove-up)
+(global-set-key (kbd "M-[ b") 'windmove-down)
 
 (global-set-key (kbd "M-k") 'kill-this-buffer)
 (global-set-key [kp-delete] 'delete-char)
@@ -171,6 +176,8 @@
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+;; Terminal
+(global-set-key (kbd "C-c =") 'er/expand-region)
 
 (global-unset-key (kbd "<left>"))
 (global-unset-key (kbd "<right>"))
