@@ -8,7 +8,7 @@
 (set-language-environment 'utf-8)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-; (menu-bar-mode -1)
+(menu-bar-mode -1)
 (delete-selection-mode 1)
 (global-linum-mode 1)
 (setq linum-format "%d ")
@@ -26,7 +26,6 @@
 (setq-default require-final-newline t)
 (setq next-line-add-newlines nil)
 (setq message-log-max 256)
-;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq default-frame-alist '(
                             (top . 35)
                             (left . 35)
