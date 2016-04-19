@@ -23,7 +23,7 @@
 (require 'mode-setup)
 (require 'recentf-setup)
 (require 'uniquify-setup)
-(require 'ac)
+(require 'company-setup)
 (require 'magit-setup)
 (require 'dired-setup)
 ;(require 'erc-setup)

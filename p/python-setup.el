@@ -1,7 +1,15 @@
+;;; python-setup.el --- Python Setup
+;;; Commentary:
+;;; Code:
 (require 'python)
 
 ;(setq python-shell-virtualenv-path "~/.virtualenvs")
 (venv-workon "emacs")
+
+(defvar py-electric-colon-active-p)
+(defvar py-electric-colon-greedy-p)
+(defvar py-electric-colon-newline-and-indent-p)
+(defvar py-empty-line-closes-p)
 
 (setq py-electric-colon-active-p t)
 (setq py-electric-colon-greedy-p t)
@@ -16,17 +24,13 @@
 (set-face-background 'highlight-indentation-face "#454545")
 (set-face-background 'highlight-indentation-current-column-face "#8A8A8A")
 
-(setq jedi:setup-keys t)
-(require 'jedi)
-;; (setq jedi:server-command
-;;       (list "~/.virtualenvs/emacs/bin/python" jedi:server-script))
-(setq jedi:complete-on-dot t)
-(add-hook 'python-mode-hook 'jedi:setup)
-
+(defvar company-backends)
 (defun my-python-hook ()
+  (add-to-list 'company-backends 'company-jedi)
   (define-key python-mode-map (kbd "RET") 'newline-and-indent))
 (add-hook 'python-mode-hook 'my-python-hook)
 (add-hook 'python-mode-hook '(lambda ()
                                (setq electric-indent-mode nil)))
 
 (provide 'python-setup)
+;;; python-setup.el ends here

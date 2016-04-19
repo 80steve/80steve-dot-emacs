@@ -16,6 +16,12 @@
 (autoload 'js2-mode "js2" "Javascript Mode." t)
 (autoload 'coffee-mode "coffee-setup" "CoffeeScript Mode." t)
 
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(defun my-js-hook ()
+  (add-to-list 'company-backends 'company-tern))
+(add-hook 'js-mode-hook 'my-js-hook)
+
+
 (setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.module$" . php-mode) auto-mode-alist))
@@ -44,7 +50,7 @@
 (require 'diminish)
 (eval-after-load "projectile" '(diminish 'projectile-mode " P "))
 (eval-after-load "helm" '(diminish 'helm-mode " H "))
-(eval-after-load "auto-complete" '(diminish 'auto-complete-mode " AC "))
+(eval-after-load "company" '(diminish 'company-mode " CO "))
 (eval-after-load "yas-minor-mode" '(diminish 'yas-minor-mode))
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
 (eval-after-load "flycheck" '(diminish 'flycheck-mode))

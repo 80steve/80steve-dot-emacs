@@ -1,3 +1,6 @@
+;;; Package --- Package Setup
+;;; Commentary:
+;;; Code:
 (require 'package)
 
 (add-to-list 'package-archives
@@ -10,12 +13,12 @@
 ;; Adopted from http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/
 
 (defvar editor-packages
-  '(ace-jump-mode anzu auto-complete browse-kill-ring coffee-mode dedicated diminish dropdown-list expand-region eyebrowse
-                  flycheck flycheck-color-mode-line git-gutter git-timemachine go-autocomplete go-mode helm helm-projectile
-                  highlight-indentation idle-highlight-mode jedi js2-mode less-css-mode magit markdown-mode monokai-theme multiple-cursors
-                  php-mode powerline prodigy projectile python-django rainbow-delimiters rainbow-mode smartparens virtualenvwrapper
+  '(ace-jump-mode anzu browse-kill-ring coffee-mode company company-go company-jedi company-quickhelp company-tern  dedicated diminish dropdown-list
+                  expand-region flycheck flycheck-color-mode-line git-gutter git-timemachine go-mode helm helm-projectile
+                  highlight-indentation idle-highlight-mode js2-mode less-css-mode magit markdown-mode monokai-theme multiple-cursors
+                  php-mode powerline prodigy projectile python-django rainbow-delimiters react-snippets rainbow-mode smartparens virtualenvwrapper
                   web-mode window-numbering workgroups2 yasnippet)
-  "Editor Package To Be Installed At Startup")
+  "Editor Package To Be Installed At Startup.")
 
 (defun editor-packages-installed-p ()
   (loop for p in editor-packages
@@ -31,3 +34,4 @@
       (package-install p))))
 
 (provide 'package-setup)
+;;; package-setup.el ends here

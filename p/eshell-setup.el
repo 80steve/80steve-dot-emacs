@@ -7,12 +7,6 @@
  eshell-mv-interactive-query t
  eshell-rm-interactive-query t)
 
-(require 'auto-complete)
-(defvar ac-source-eshell-pcomplete
-  '((candidates . (pcomplete-completions))))
-(add-to-list 'ac-modes 'eshell-mode)
-(setq ac-sources '(ac-source-eshell-pcomplete))
-
 (defun eshell/clear ()
   "Clears the shell buffer ala Unix's clear or DOS' cls"
   (interactive)
