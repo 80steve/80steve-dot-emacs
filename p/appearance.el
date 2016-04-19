@@ -7,7 +7,8 @@
 
 (require 'powerline)
 (powerline-default-theme)
-(setq powerline-default-separator 'contour)
+(setq powerline-default-separator 'wave)
+(setq powerline-height 16)
 
 (require 'git-gutter)
 (global-git-gutter-mode)
