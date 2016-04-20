@@ -29,8 +29,6 @@
   (add-to-list 'company-backends 'company-jedi)
   (define-key python-mode-map (kbd "RET") 'newline-and-indent))
 (add-hook 'python-mode-hook 'my-python-hook)
-(add-hook 'python-mode-hook '(lambda ()
-                               (setq electric-indent-mode nil)))
 
 (provide 'python-setup)
 ;;; python-setup.el ends here
