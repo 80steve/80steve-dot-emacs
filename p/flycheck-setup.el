@@ -10,6 +10,7 @@
                       '(javascript-jshint)))
 
 (flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
 
 (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
 
