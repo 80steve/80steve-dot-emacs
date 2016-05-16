@@ -50,6 +50,9 @@
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-enable-auto-pairing t)
 
+(require 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
