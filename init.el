@@ -32,10 +32,11 @@
 (require 'projectile-setup)
 (require 'ace-jump-setup)
 (require 'mc-setup)
-(require 'wg-setup)
 (require 'flycheck-setup)
-(require 'eb-setup)
 (require 'org-setup)
+(require 'wg-setup)
+
+(set-frame-size-according-to-resolution)
 
 (provide 'init)
 ;;; init.el ends here

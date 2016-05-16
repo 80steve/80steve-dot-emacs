@@ -26,12 +26,24 @@
 (setq-default require-final-newline t)
 (setq next-line-add-newlines nil)
 (setq message-log-max 256)
-(setq default-frame-alist '(
-                            (top . 35)
-                            (left . 35)
-                            (width . 200)
-                            (height . 55)
-                            ))
+
+;; Frame Adjustment
+(defun set-frame-size-according-to-resolution ()
+  (interactive)
+  (if window-system
+      (progn
+        (if (> (x-display-pixel-width) 1600)
+            (set-frame-width (selected-frame) 230)
+          (set-frame-width (selected-frame) 160))
+        (setq my-height (/ (- (display-pixel-height) 200)
+                           (frame-char-height)))
+        (set-frame-height (selected-frame) my-height)
+        (setq my-position-x (/ (/ (- (display-pixel-width) (frame-pixel-width (selected-frame)))
+                                  (frame-char-width)) 2))
+        (set-frame-position (selected-frame) my-position-x 90)
+        )))
+(global-set-key (kbd "C-x 9") 'set-frame-size-according-to-resolution)
+
 
 ;; Make sure scrollbar doesn't show even on emacsclient
 (defun disable-scrollbar (_)
