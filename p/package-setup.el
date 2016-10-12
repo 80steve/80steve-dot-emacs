@@ -13,8 +13,8 @@
 ;; Adopted from http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/
 
 (defvar editor-packages
-  '(ace-jump-mode ag anzu browse-kill-ring coffee-mode company company-go company-jedi company-quickhelp company-tern dedicated diminish dropdown-list
-                  emmet-mode expand-region flycheck flycheck-color-mode-line git-gutter git-timemachine go-mode helm helm-projectile
+  '(ace-jump-mode ag anaconda-mode anzu browse-kill-ring coffee-mode company company-go company-anaconda company-quickhelp company-tern dedicated diminish
+                  dropdown-list emmet-mode expand-region flycheck flycheck-color-mode-line git-gutter git-timemachine go-mode helm helm-projectile
                   highlight-indentation idle-highlight-mode js2-mode less-css-mode magit markdown-mode monokai-theme multiple-cursors
                   php-mode powerline prodigy projectile python-django rainbow-delimiters react-snippets rainbow-mode smartparens spacemacs-theme
                   virtualenvwrapper web-mode window-numbering workgroups2 yasnippet)

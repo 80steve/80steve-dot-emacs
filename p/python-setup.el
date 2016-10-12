@@ -26,9 +26,11 @@
 
 (defvar company-backends)
 (defun my-python-hook ()
-  (add-to-list 'company-backends 'company-jedi)
+  (add-to-list 'company-backends 'company-anaconda)
   (define-key python-mode-map (kbd "RET") 'newline-and-indent))
 (add-hook 'python-mode-hook 'my-python-hook)
+
+(add-hook 'python-mode-hook 'anaconda-mode)
 
 (provide 'python-setup)
 ;;; python-setup.el ends here
