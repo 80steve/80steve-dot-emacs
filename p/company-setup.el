@@ -10,6 +10,8 @@
 (setq company-idle-delay 0)
 (setq company-echo-delay 0)
 (setq company-selection-wrap-around t)
+(setq company-dabbrev-downcase nil)
+(setq company-minimum-prefix-length 2)
 
 (defvar company-active-map)
 (define-key company-active-map (kbd "M-n") nil)
@@ -19,6 +21,8 @@
 
 (defvar company-backends)
 (add-to-list 'company-backends 'company-go)
+
+(add-to-list 'company-backends 'company-tern)
 
 (company-quickhelp-mode 1)
 (defvar company-quickhelp-delay)
