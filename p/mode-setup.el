@@ -10,17 +10,15 @@
 (setq php-mode-warn-if-mumamo-off nil)
 
 (require 'js2-mode)
-(setq js2-basic-offset 2)
+(setq js2-basic-offset 4)
 (setq js2-mode-show-parse-errors nil)
 (setq js2-mode-show-strict-warnings nil)
 (autoload 'js2-mode "js2" "Javascript Mode." t)
 (autoload 'coffee-mode "coffee-setup" "CoffeeScript Mode." t)
 
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(defun my-js-hook ()
-  (add-to-list 'company-backends 'company-tern))
-(add-hook 'js-mode-hook 'my-js-hook)
-
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(define-key js-mode-map (kbd "M-.") nil)
 
 (setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
@@ -31,13 +29,12 @@
 
 (require 'web-mode)
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
-;(setq auto-mode-alist (cons '("\\.js$" . web-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.jsx$" . web-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.js$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\index.ios.js$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\index.android.js$" . web-mode) auto-mode-alist))
 
 (defvar web-mode-content-types-alist)
-(setq web-mode-content-types-alist '(("jsx" . "\\.jsx?$")))
+(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?$")))
 
 (defvar web-mode-engines-alist)
 (setq web-mode-engines-alist

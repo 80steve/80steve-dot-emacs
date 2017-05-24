@@ -21,6 +21,7 @@
 (require 've-setup)
 (require 'helm-setup)
 (require 'mode-setup)
+(require 'react-setup)
 (require 'recentf-setup)
 (require 'uniquify-setup)
 (require 'company-setup)
