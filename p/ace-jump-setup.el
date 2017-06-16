@@ -5,5 +5,7 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
+(define-key global-map (kbd "M-p") 'ace-window)
+
 (provide 'ace-jump-setup)
 ;;; ace-jump-setup ends here

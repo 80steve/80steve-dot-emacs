@@ -168,7 +168,7 @@
   (interactive)
   (save-excursion
     (shell-command-on-region (point-min) (point-max) "export PYTHONIOENCODING=UTF-8; python -c 'import sys, json; data=sys.stdin.read(); print json.dumps(json.loads(data), sort_keys=True, indent=4).decode(\"unicode-escape\")'" (current-buffer) t)))
-(global-set-key (kbd "M-p") 'pretty-print-json)
+(global-set-key (kbd "C-x M-p") 'pretty-print-json)
 
 (defun fun-pretty-print-json(&optional b e)
   (interactive "r")
@@ -189,12 +189,16 @@
 ;; OrgMode Files
 (global-set-key (kbd "C-c o")
                 (lambda () (interactive) (find-file "~/Documents/OrgMode/personal.org")))
+(global-set-key (kbd "C-c t")
+                (lambda () (interactive) (find-file "~/Documents/OrgMode/work.org")))
 (global-set-key (kbd "C-c n")
                 (lambda () (interactive) (find-file "~/Documents/OrgMode/notes.org")))
 
 ;; make sure the marked window stay where it is
 (require 'dedicated)
 (global-set-key (kbd "C-c z d") 'dedicated-mode)
+
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 
 (global-set-key (kbd "C-c g") 'goto-line)
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)

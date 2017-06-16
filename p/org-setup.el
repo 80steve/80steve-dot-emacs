@@ -17,12 +17,12 @@
 (setq org-directory "~/Documents/OrgMode/")
 
 (setq org-agenda-files (list (concat org-directory "/personal.org")
-                             (concat org-directory "/jobmaze.org")))
+                             (concat org-directory "/work.org")))
 
 (defvar org-capture-templates)
 (setq org-capture-templates
       '(("p" "Personal Todo" entry (file+headline (concat org-directory "/personal.org") "Tasks") "* TODO %?\n %i\n")
-        ("w" "Work Todo" entry (file+headline (concat org-directory "/jobmaze.org") "Tasks") "* TODO %?\n %i\n")
+        ("w" "Work Todo" entry (file+headline (concat org-directory "/work.org") "Tasks") "* TODO %?\n %i\n")
         ("n" "Notes" entry (file+headline (concat org-directory "/notes.org") "Notes") "* %^{NOTES} \n%<%Y-%m-%d %H:%M>\n %?\n %i\n")
         ))
 
