@@ -3,15 +3,6 @@
 ;;; Code:
 (require 'go-mode)
 
-(require 'exec-path-from-shell)
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "GOPATH")
-  (exec-path-from-shell-copy-env "GOROOT"))
-
-;; (setenv "GOPATH" "/Users/stevechan/.gvm/pkgsets/go1.4.2/dev")
-;; (setenv "GOROOT" "/Users/stevechan/.gvm/gos/go1.4.2")
-
 (defun go-mode-setup()
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
@@ -22,8 +13,12 @@
 
 (add-hook 'go-mode-hook 'go-mode-setup)
 
-;; (load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
-;; (add-hook 'go-mode-hook 'go-oracle-mode)
+(require 'go-guru)
+(add-hook 'go-mode-hook 'go-guru-hl-identifier-mode)
+
+(require 'go-eldoc)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+
 
 (provide 'go-setup)
 ;;; go-setup ends here
