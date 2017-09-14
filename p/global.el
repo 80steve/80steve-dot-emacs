@@ -122,6 +122,9 @@
 (require 'browse-kill-ring)
 (global-set-key "\C-cy" '(lambda () (interactive) (popup-menu 'yank-menu)))
 
+;; Aggressive Indent
+(global-aggressive-indent-mode 1)
+
 ;; end vendor
 
 (provide 'global)
