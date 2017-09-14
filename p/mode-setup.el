@@ -5,7 +5,7 @@
 (autoload 'python-mode "python-setup" "Python Mode." t)
 (autoload 'go-mode "go-setup" "Go Mode." t)
 
-; try shutting off the warning from php-indent
+;; try shutting off the warning from php-indent
 (defvar php-mode-warn-if-mumamo-off)
 (setq php-mode-warn-if-mumamo-off nil)
 

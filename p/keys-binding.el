@@ -43,6 +43,7 @@
 
 ;; Select Word
 (defun select-word (start end)
+  "Select word: set region START & END to next word."
   (interactive "r")
   (let (pt (mbh mark-even-if-inactive))
     (if (region-active-p)
@@ -61,6 +62,7 @@
 
 ;; Copy Line
 (defun copy-line ()
+  "Copy line into pasteboard."
   (interactive)
   (copy-region-as-kill (line-beginning-position) (line-end-position)))
 
@@ -68,6 +70,7 @@
 
 ;; Duplicate Line
 (defun duplicate-line ()
+  "Copy line and yank into next line."
   (interactive)
   (let (beg end (org (point)))
     (copy-line)
@@ -79,7 +82,7 @@
     (indent-region beg end)
     (if (/= (length (cdr kill-ring)) 0)
         (progn (setq kill-ring (cdr kill-ring))
-                     (rotate-yank-pointer 1))
+               (rotate-yank-pointer 1))
       (setq kill-ring '()))
     (goto-char org)))
 
@@ -120,6 +123,8 @@
       (comment-or-uncomment-region (region-beginning) (region-end))
     (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
 
+(global-unset-key (kbd "M-;"))
+(global-set-key (kbd "M-;") 'comment-line-or-region)
 (global-set-key (kbd "s-/") 'comment-line-or-region)
 
 (defun smart-kill-whole-line (&optional arg)

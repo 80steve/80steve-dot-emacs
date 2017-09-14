@@ -1,8 +1,19 @@
+;;; Package --- Init
+;;; Commentary:
+;;; Code:
+
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defvar home-dir (file-name-directory load-file-name)
-  "The root dir of emacs configure")
+  "The root dir of Emacs configure.")
 
 (defvar setup-dir (concat home-dir "p/")
-  "This directory house setup files")
+  "This directory house setup files.")
 (defvar vendor-dir (concat home-dir "vendor/")
   "This directory house Emacs Lisp packages that are not yet available in ELPA (or MELPA).")
 
