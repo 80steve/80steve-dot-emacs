@@ -33,8 +33,8 @@
   (if window-system
       (progn
         (if (> (x-display-pixel-width) 1600)
-            (set-frame-width (selected-frame) 230)
-          (set-frame-width (selected-frame) 160))
+            (set-frame-width (selected-frame) 180)
+          (set-frame-width (selected-frame) 120))
         (setq my-height (/ (- (display-pixel-height) 200)
                            (frame-char-height)))
         (set-frame-height (selected-frame) my-height)
