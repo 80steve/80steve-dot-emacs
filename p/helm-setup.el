@@ -49,5 +49,6 @@
 (setq projectile-completion-system 'helm)
 
 (helm-mode 1)
+(helm-flx-mode 1)
 
 (provide 'helm-setup)
