@@ -26,5 +26,8 @@
         ("n" "Notes" entry (file+headline (concat org-directory "/notes.org") "Notes") "* %^{NOTES} \n%<%Y-%m-%d %H:%M>\n %?\n %i\n")
         ))
 
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 (provide 'org-setup)
 ;;; org-setup ends here
