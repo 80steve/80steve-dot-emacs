@@ -32,6 +32,7 @@
 (require 've-setup)
 (require 'helm-setup)
 (require 'mode-setup)
+(require 'go-setup)
 (require 'react-setup)
 (require 'recentf-setup)
 (require 'uniquify-setup)
