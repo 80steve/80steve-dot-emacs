@@ -15,12 +15,12 @@
 (defvar editor-packages
   '(ace-jump-mode ace-window ag aggressive-indent anaconda-mode anzu browse-kill-ring coffee-mode company
                   company-go company-anaconda company-quickhelp company-tern dedicated diminish dropdown-list
-                  emmet-mode expand-region flycheck flycheck-color-mode-line git-gutter git-link git-timemachine
-                  github-browse-file go-eldoc go-mode go-guru helm helm-flx helm-projectile highlight-indentation
-                  idle-highlight-mode js2-mode js-doc less-css-mode magit markdown-mode multiple-cursors neotree
-                  org-bullets php-mode pip-requirements powerline prodigy projectile python-django pyvenv py-isort
-                  rainbow-delimiters react-snippets rainbow-mode smartparens spacemacs-theme virtualenvwrapper
-                  web-mode window-numbering yapfify yasnippet)
+                  emmet-mode expand-region exec-path-from-shell flycheck flycheck-color-mode-line git-gutter git-link
+                  git-timemachine github-browse-file go-eldoc go-mode go-guru helm helm-flx helm-projectile
+                  highlight-indentation idle-highlight-mode js2-mode js-doc less-css-mode magit markdown-mode
+                  multiple-cursors neotree org-bullets php-mode pip-requirements powerline prodigy projectile
+                  python-django pyvenv py-isort rainbow-delimiters react-snippets rainbow-mode smartparens spacemacs-theme
+                  virtualenvwrapper web-mode window-numbering yapfify yasnippet)
   "Editor Package To Be Installed At Startup.")
 
 (defun editor-packages-installed-p ()
