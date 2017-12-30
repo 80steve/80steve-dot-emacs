@@ -1,6 +1,27 @@
-ac-comphist.dat
-emacs_env/
+# exclude modes
 p/erc-setup.el
+p/elfeed-setup.el
+p/prodigy-setup.el
+
+# packages
 elpa/
+emacs_env/
+
+# eshell
+eshell/
+
+# mode side-files
 recentf
+bookmarks
+ac-comphist.dat
+ido.last
+.sx/
+url/
+.emacs_workgroups
+
+# projectile
 projectile-bookmarks.eld
+projectile.cache
+
+# anaconda-mode
+anaconda-mode/
