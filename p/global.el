@@ -118,10 +118,6 @@
 (require 'window-numbering)
 (window-numbering-mode 1)
 
-;; Browse Kill Ring
-(require 'browse-kill-ring)
-(global-set-key "\C-cy" '(lambda () (interactive) (popup-menu 'yank-menu)))
-
 ;; Aggressive Indent
 (global-aggressive-indent-mode 1)
 
