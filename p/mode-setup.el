@@ -9,6 +9,14 @@
 (defvar php-mode-warn-if-mumamo-off)
 (setq php-mode-warn-if-mumamo-off nil)
 
+(defvar exec-path-from-shell-variables)
+(setq exec-path-from-shell-variables (quote ("PATH" "NVM_PATH" "GOPATH")))
+
+(require 'exec-path-from-shell)
+(when (memq window-system '(mac ns nil))
+  exec-path-from-shell-variables
+  (exec-path-from-shell-initialize))
+
 (require 'js2-mode)
 (setq js2-basic-offset 4)
 (setq js2-mode-show-parse-errors nil)

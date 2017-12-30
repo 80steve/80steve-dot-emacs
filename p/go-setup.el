@@ -3,11 +3,6 @@
 ;;; Code:
 (require 'go-mode)
 
-(require 'exec-path-from-shell)
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "GOPATH"))
-
 (defun go-mode-setup()
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
