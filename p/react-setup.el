@@ -4,6 +4,7 @@
 (defun react-mode-setup ()
   "Adjust web-mode to accommodate react-mode."
   (emmet-mode 0)
+  (tern-mode 1)
   (setq-local emmet-expand-jsx-className? t)
   (yas-activate-extra-mode 'js-mode)
   (web-mode-set-content-type "jsx")
