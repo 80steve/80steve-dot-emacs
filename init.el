@@ -39,17 +39,17 @@
 (require 'company-setup)
 (require 'magit-setup)
 (require 'dired-setup)
-;(require 'erc-setup)
-;(require 'ack-setup)
+;; (require 'erc-setup)
+;; (require 'ack-setup)
 (require 'ag-setup)
 (require 'projectile-setup)
 (require 'ace-jump-setup)
 (require 'mc-setup)
 (require 'flycheck-setup)
+;; (require 'prodigy-setup)
 (require 'org-setup)
 (require 'wg-setup)
-
-(set-frame-size-according-to-resolution)
+(require 'elfeed-setup)
 
 (provide 'init)
 ;;; init.el ends here
