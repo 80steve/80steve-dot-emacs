@@ -3,8 +3,11 @@
 ;;; Code:
 (require 'go-mode)
 
+(defvar company-backends)
+
 (defun go-mode-setup()
   (setq gofmt-command "goimports")
+  (add-to-list 'company-backends 'company-go)
   (add-hook 'before-save-hook 'gofmt-before-save)
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "C-c C-g") 'go-goto-imports)

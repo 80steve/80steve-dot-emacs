@@ -1,4 +1,12 @@
+;;; package --- PHP Setup
+;;; Commentary:
+;;; Code:
 (require 'php-mode)
+
+;; try shutting off the warning from php-indent
+(defvar php-mode-warn-if-mumamo-off)
+(setq php-mode-warn-if-mumamo-off nil)
+
 (defun clean-php-mode ()
   (setq c-basic-offset 4))
 (add-hook 'php-mode-hook 'clean-php-mode)
@@ -16,3 +24,4 @@
              (local-set-key (kbd "RET") 'newline-and-indent)))
 
 (provide 'php-setup)
+;;; php-setup ends here

@@ -19,14 +19,12 @@
 (define-key company-active-map "\C-n" 'company-select-next)
 (define-key company-active-map "\C-p" 'company-select-previous)
 
-(defvar company-backends)
-(add-to-list 'company-backends 'company-go)
-
-(add-to-list 'company-backends 'company-tern)
-
 (company-quickhelp-mode 1)
 (defvar company-quickhelp-delay)
 (setq company-quickhelp-delay nil)
+
+(global-unset-key (kbd "C-M-i"))
+(global-set-key (kbd "C-M-i") 'company-complete)
 
 (provide 'company-setup)
 ;;; company-setup.el ends here

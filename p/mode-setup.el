@@ -4,10 +4,9 @@
 (autoload 'php-mode "php-setup" "PHP mode." t)
 (autoload 'python-mode "python-setup" "Python Mode." t)
 (autoload 'go-mode "go-setup" "Go Mode." t)
-
-;; try shutting off the warning from php-indent
-(defvar php-mode-warn-if-mumamo-off)
-(setq php-mode-warn-if-mumamo-off nil)
+(autoload 'js2-mode "js-setup" "Js Mode." t)
+(autoload 'js-mode "js-setup" "Js Mode." t)
+(autoload 'javascript-mode "js-setup" "Js Mode." t)
 
 (defvar exec-path-from-shell-variables)
 (setq exec-path-from-shell-variables (quote ("PATH" "NVM_PATH" "GOPATH")))
@@ -17,17 +16,6 @@
   exec-path-from-shell-variables
   (exec-path-from-shell-initialize))
 
-(require 'js2-mode)
-(setq js2-basic-offset 4)
-(setq js2-mode-show-parse-errors nil)
-(setq js2-mode-show-strict-warnings nil)
-(autoload 'js2-mode "js2" "Javascript Mode." t)
-(autoload 'coffee-mode "coffee-setup" "CoffeeScript Mode." t)
-
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-(define-key js-mode-map (kbd "M-.") nil)
-
 (setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.module$" . php-mode) auto-mode-alist))
@@ -35,14 +23,13 @@
 (setq auto-mode-alist (cons '("\\.install$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.engine$" . php-mode) auto-mode-alist))
 
+(setq auto-mode-alist (cons '("\\.jsx$" . react-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.react.js$" . react-mode) auto-mode-alist))
+(add-to-list 'magic-mode-alist '("/\\*\\* @jsx React\\.DOM \\*/" . react-mode))
+(add-to-list 'magic-mode-alist '("^import React" . react-mode))
+
 (require 'web-mode)
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.js$" . web-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\index.ios.js$" . web-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\index.android.js$" . web-mode) auto-mode-alist))
-
-(defvar web-mode-content-types-alist)
-(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?$")))
 
 (defvar web-mode-engines-alist)
 (setq web-mode-engines-alist
