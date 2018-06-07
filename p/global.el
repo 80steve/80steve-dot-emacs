@@ -10,8 +10,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (delete-selection-mode 1)
-(global-linum-mode 1)
-(setq linum-format "%d ")
+(global-display-line-numbers-mode 1)
+(setq display-line-numbers "%d ")
 (global-font-lock-mode 1) ; function
 (setq font-lock-maximum-decoration t)
 (setq-default fill-column 120)
