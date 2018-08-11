@@ -45,9 +45,9 @@
 (require 'ace-jump-setup)
 (require 'mc-setup)
 (require 'flycheck-setup)
+(require 'origami-setup)
 ;; (require 'prodigy-setup)
 (require 'org-setup)
-(require 'wg-setup)
 (require 'elfeed-setup)
 
 (provide 'init)

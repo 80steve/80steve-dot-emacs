@@ -85,6 +85,9 @@
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse 't)
 
+;; Aggressive Delete
+(global-hungry-delete-mode t)
+
 ;; Electric Pair Mode to replace skeleton pairs
 (electric-pair-mode t)
 
