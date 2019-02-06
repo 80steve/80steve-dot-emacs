@@ -3,7 +3,7 @@
 ;;; Commentary:
 (load-theme 'spacemacs-dark t)
 
-(set-face-attribute 'default nil :family "Droid Sans Mono" :height 140)
+(set-face-attribute 'default nil :family "Droid Sans Mono" :height 110)
 
 (require 'powerline)
 (powerline-default-theme)
