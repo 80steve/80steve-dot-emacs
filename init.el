@@ -46,3 +46,4 @@
 (require 'org-setup)
 
 (provide 'init)
+;;; init.el ends here

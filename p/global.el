@@ -26,6 +26,7 @@
 (setq-default require-final-newline t)
 (setq next-line-add-newlines nil)
 (setq message-log-max 256)
+(setq auto-window-vscroll nil)
 
 ;; Frame Adjustment
 (defun set-frame-size-according-to-resolution ()
