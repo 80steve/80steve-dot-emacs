@@ -26,7 +26,6 @@
 (require 'appearance)
 (require 'keys-binding)
 (require 'tramp-setup)
-(require 'ido-setup)
 (require 'eshell-setup)
 (require 'yasnippet-setup)
 (require 've-setup)
