@@ -17,8 +17,8 @@
         company-quickhelp company-tern dedicated diminish emmet-mode expand-region exec-path-from-shell
         flycheck flycheck-color-mode-line git-gutter git-link git-timemachine github-browse-file go-eldoc go-mode
         go-guru helm helm-flx helm-projectile highlight-indentation hungry-delete idle-highlight-mode js2-mode js2-refactor js-doc
-        less-css-mode magit magit-gitflow markdown-mode multiple-cursors neotree org-bullets origami php-mode pip-requirements
-        powerline projectile python-django pyvenv py-isort rainbow-delimiters react-snippets rainbow-mode scss-mode
+        less-css-mode magit magit-gitflow magit-todos markdown-mode multiple-cursors neotree org-bullets org-super-agenda origami php-mode
+        pip-requirements powerline projectile python-django pyvenv py-isort rainbow-delimiters react-snippets rainbow-mode scss-mode
         smartparens spacemacs-theme virtualenvwrapper web-mode window-numbering yapfify yasnippet)
   "Editor Package To Be Installed At Startup.")
 
