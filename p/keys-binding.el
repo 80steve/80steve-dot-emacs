@@ -21,6 +21,8 @@
 
 (global-set-key (kbd "s-i") 'iwb)
 
+(global-set-key (kbd "s-f") 'toggle-frame-fullscreen)
+
 ;; Search Occur Mode
 (define-key isearch-mode-map (kbd "C-o")
   (lambda ()
@@ -56,7 +58,6 @@
       (progn (if (eq (mark) nil)
                  (set-mark (region-beginning)))
              (set-mark pt)))))
-;      (set-mark pt))))
 
 (global-set-key "\C-cw" 'select-word)
 
