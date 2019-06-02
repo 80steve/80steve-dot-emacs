@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: margin-right
+# key: mr
+# --
+margin-right: ${1:0px};

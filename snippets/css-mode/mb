@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: margin-bottom
+# key: mb
+# --
+margin-bottom: ${1:0px};
