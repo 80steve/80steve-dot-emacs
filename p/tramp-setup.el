@@ -1,8 +1,12 @@
-;;; tramp-setup.el --- Tramp Setup
+;;; Package --- Tramp Setup
 ;;; Commentary:
 ;;; Code:
-(require 'tramp)
-(setq tramp-default-method "ssh")
+
+(use-package tramp
+  :defer 2
+  :config
+  (setq tramp-default-method "ssh")
+  )
 
 (provide 'tramp-setup)
 ;;; tramp-setup.el ends here

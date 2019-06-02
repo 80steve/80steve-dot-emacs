@@ -1,6 +1,13 @@
-(require 'virtualenvwrapper)
+;;; Package --- Virtualenv Setup
+;;; Commentary:
+;;; Code:
 
-(venv-initialize-interactive-shells)
-(setq venv-localtion "~/.virtualenvs/")
+(use-package virtualenvwrapper
+  :defer t
+  :config
+  (venv-initialize-interactive-shells)
+  (setq venv-localtion "~/.virtualenvs/")
+  )
 
 (provide 've-setup)
+;;; ve-setup.el ends here

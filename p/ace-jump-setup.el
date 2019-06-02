@@ -7,5 +7,9 @@
 
 (define-key global-map (kbd "M-p") 'ace-window)
 
+(use-package ace-window-mode
+  :defer t
+  )
+
 (provide 'ace-jump-setup)
-;;; ace-jump-setup ends here
+;;; ace-jump-setup.el ends here

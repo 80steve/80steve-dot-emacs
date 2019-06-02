@@ -1,3 +1,6 @@
+;;; Package --- Helm Setup
+;;; Commentary:
+;;; Code:
 (require 'helm)
 (require 'helm-grep)
 (require 'helm-files)
@@ -52,3 +55,4 @@
 (helm-flx-mode 1)
 
 (provide 'helm-setup)
+;;; helm-setup.el ends here

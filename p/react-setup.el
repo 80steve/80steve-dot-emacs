@@ -1,4 +1,4 @@
-;;; package --- React Setup
+;;; Package --- React Setup
 ;;; Commentary:
 ;;; Code:
 (defvar company-backends)

@@ -1,4 +1,4 @@
-;;; appearance.el --- General Appearance of Emacs
+;;; Package --- General Appearance of Emacs
 ;;; Code:
 ;;; Commentary:
 (load-theme 'spacemacs-dark t)
@@ -10,8 +10,11 @@
 (setq powerline-default-separator 'wave)
 (setq powerline-height 16)
 
-(require 'git-gutter)
-(global-git-gutter-mode)
+(use-package git-gutter
+  :defer 2
+  :config
+  (global-git-gutter-mode)
+  )
 
 (provide 'appearance)
 ;;; appearance.el ends here

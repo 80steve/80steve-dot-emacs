@@ -1,4 +1,4 @@
-;;; eshell-setup.el --- EShell Setup
+;;; Package --- EShell Setup
 ;;; Commentary:
 ;;; Code:
 (require 'eshell)
