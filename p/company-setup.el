@@ -2,31 +2,29 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package company
-  :defer 2
-  :config
-  (global-company-mode)
+(require 'company)
 
-  (setq company-tooltip-limit 20)
-  (setq company-idle-delay .3)
-  (setq company-echo-delay 0)
-  (setq company-selection-wrap-around t)
-  (setq company-dabbrev-downcase nil)
-  (setq company-minimum-prefix-length 2)
+(global-company-mode)
 
-  (defvar company-active-map)
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map "\C-n" 'company-select-next)
-  (define-key company-active-map "\C-p" 'company-select-previous)
+(setq company-tooltip-limit 20)
+(setq company-idle-delay .3)
+(setq company-echo-delay 0)
+(setq company-selection-wrap-around t)
+(setq company-dabbrev-downcase nil)
+(setq company-minimum-prefix-length 2)
 
-  (company-quickhelp-mode 1)
-  (defvar company-quickhelp-delay)
-  (setq company-quickhelp-delay nil)
+(defvar company-active-map)
+(define-key company-active-map (kbd "M-n") nil)
+(define-key company-active-map (kbd "M-p") nil)
+(define-key company-active-map "\C-n" 'company-select-next)
+(define-key company-active-map "\C-p" 'company-select-previous)
 
-  (global-unset-key (kbd "C-M-i"))
-  (global-set-key (kbd "C-M-i") 'company-complete)
-  )
+(company-quickhelp-mode 1)
+(defvar company-quickhelp-delay)
+(setq company-quickhelp-delay nil)
 
-  (provide 'company-setup)
+(global-unset-key (kbd "C-M-i"))
+(global-set-key (kbd "C-M-i") 'company-complete)
+
+(provide 'company-setup)
 ;;; company-setup.el ends here
