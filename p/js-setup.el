@@ -6,7 +6,6 @@
 (setq js2-mode-show-parse-errors nil)
 (setq js2-mode-show-strict-warnings nil)
 (autoload 'js2-mode "js2" "Javascript Mode." t)
-(autoload 'coffee-mode "coffee-setup" "CoffeeScript Mode." t)
 
 (require 'js2-refactor)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
