@@ -3,10 +3,10 @@
 ;;; Code:
 (use-package org
   :defer t
-  :config
+  :init
   (define-key global-map "\C-ca" 'org-agenda)
   (define-key global-map "\C-cr" 'org-capture)
-
+  :config
   (setq org-log-done t)
   (setq org-hide-leading-stars 1)
   (setq org-todo-keywords
