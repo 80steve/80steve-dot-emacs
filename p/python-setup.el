@@ -32,12 +32,15 @@
 (defun my-python-hook ()
   "Configure company backend & newline behaviour."
   (add-to-list 'company-backends 'company-anaconda)
-  (define-key python-mode-map (kbd "RET") 'newline-and-indent))
-(add-hook 'python-mode-hook 'my-python-hook)
+  (define-key python-mode-map (kbd "RET") 'newline-and-indent)
+  (local-set-key (kbd "C-c C-f") 'anaconda-mode-show-doc))
 
+(add-hook 'python-mode-hook 'my-python-hook)
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 (add-hook 'python-mode-hook 'yapf-mode)
+
+
 
 (provide 'python-setup)
 ;;; python-setup.el ends here
