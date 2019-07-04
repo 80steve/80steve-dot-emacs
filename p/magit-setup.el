@@ -3,6 +3,7 @@
 ;;; Code:
 
 (global-set-key "\C-cm" 'magit-status)
+(global-set-key "\C-cbl" 'git-link)
 
 (use-package magit
   :defer t
