@@ -4,6 +4,7 @@
 (load-theme 'spacemacs-dark t)
 
 (set-face-attribute 'default nil :family "Hack" :height 110)
+(setq-default line-spacing 0.16)
 
 (require 'powerline)
 (powerline-default-theme)
