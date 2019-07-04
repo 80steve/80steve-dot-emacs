@@ -9,6 +9,7 @@
 
 (require 'helm-config)
 (require 'helm-projectile)
+(helm-projectile-on)
 
 (setq helm-quick-update                     t
       helm-split-window-in-side-p           t
