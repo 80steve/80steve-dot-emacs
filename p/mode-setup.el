@@ -22,11 +22,13 @@
 
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.vue$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.module$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.inc$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.install$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.engine$" . php-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.yml$" . yaml-mode) auto-mode-alist))
 
 (setq auto-mode-alist (cons '("\\.jsx$" . react-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.react.js$" . react-mode) auto-mode-alist))
@@ -58,6 +60,7 @@
   :defer t
   )
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 
 ;; Modeline Setup
 (use-package diminish
