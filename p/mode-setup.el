@@ -52,6 +52,21 @@
   (emmet-mode)
   )
 
+(use-package prettier-js-mode
+  :defer t
+  :bind ("C-c C-p" . prettier-js)
+  )
+
+(defun enable-minor-mode (my-pair)
+  "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+  (if (buffer-file-name)
+      (if (string-match (car my-pair) buffer-file-name)
+          (funcall (cdr my-pair)))))
+
+(add-hook 'web-mode-hook #'(lambda ()
+                             (enable-minor-mode
+                              '("\\.vue?\\'" . prettier-js-mode))))
+
 (use-package emmet-mode
   :defer t
   )
