@@ -43,7 +43,10 @@
   (setq web-mode-engines-alist
         '(("django" . "\\.djhtml$")
           ("django" . "\\.html$")))
+  (setq web-mode-content-types-alist
+        '(("vue" . "\\.vue\\'")))
 
+  (setq web-mode-enable-css-colorization t)
   (setq web-mode-enable-current-element-highlight t)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
