@@ -7,9 +7,9 @@
 
 (defun go-mode-setup()
   (setq gofmt-command "goimports")
-  (add-to-list 'company-backends 'company-go)
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (local-set-key (kbd "M-.") 'godef-jump)
+  (add-to-list 'company-backends 'company-lsp)
+  (local-set-key (kbd "M-.") 'lsp-find-definition)
   (local-set-key (kbd "C-c C-g") 'go-goto-imports)
   (local-set-key (kbd "C-c C-f") 'gofmt)
   (local-set-key (kbd "C-c d") 'godoc))

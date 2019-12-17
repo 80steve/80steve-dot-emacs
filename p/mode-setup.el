@@ -79,6 +79,32 @@
   )
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+(use-package lsp-mode
+  :defer t
+  :hook (go-mode . lsp-deferred)
+  :commands (lsp lsp-deferred)
+  :config
+  (setq lsp-prefer-flymake nil)
+  )
+
+(use-package lsp-ui
+  :defer t
+  :requires lsp-mode flycheck
+  :init
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  :config
+  (setq lsp-ui-doc-enable t)
+  (setq lsp-ui-doc-position 'top)
+  (setq lsp-ui-doc-include-signature t)
+  (setq lsp-ui-peek-enable t)
+  (setq lsp-ui-sideline-enable nil)
+  (setq lsp-ui-flycheck-live-reporting t)
+  )
+
+(use-package company-lsp
+  :defer t
+  )
+
 
 ;; Modeline Setup
 (use-package diminish

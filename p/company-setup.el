@@ -26,5 +26,8 @@
 (global-unset-key (kbd "C-M-i"))
 (global-set-key (kbd "C-M-i") 'company-complete)
 
+(add-to-list 'company-backends 'company-web-html)
+(push 'company-lsp company-backends)
+
 (provide 'company-setup)
 ;;; company-setup.el ends here
