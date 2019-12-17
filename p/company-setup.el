@@ -9,9 +9,12 @@
 (setq company-tooltip-limit 20)
 (setq company-idle-delay .3)
 (setq company-echo-delay 0)
+(setq company-begin-commands '(self-insert-command))
 (setq company-selection-wrap-around t)
 (setq company-dabbrev-downcase nil)
-(setq company-minimum-prefix-length 2)
+(setq company-minimum-prefix-length 0)
+(setq company-lsp-async t)
+(setq company-lsp-cache-candidates nil)
 
 (defvar company-active-map)
 (define-key company-active-map (kbd "M-n") nil)
