@@ -56,9 +56,9 @@
   )
 
 (use-package prettier-js-mode
-  :defer t
-  :bind ("C-c C-p" . prettier-js)
-  )
+:defer t
+:bind ("C-c C-p" . prettier-js)
+)
 
 (defun enable-minor-mode (my-pair)
   "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
@@ -72,6 +72,7 @@
 
 (use-package emmet-mode
   :defer t
+  :hook (web-mode css-mode scss-mode js3-mode)
   )
 
 (use-package rainbow-delimiters
