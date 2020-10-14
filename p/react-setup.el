@@ -7,8 +7,6 @@
   web-mode "react"
   "Adjust web-mode to accommodate react-mode."
   (emmet-mode 0)
-  (tern-mode t)
-  (add-to-list 'company-backends 'company-tern)
   (setq-local emmet-expand-jsx-className? t)
   (yas-activate-extra-mode 'js2-mode)
   (web-mode-set-content-type "jsx")

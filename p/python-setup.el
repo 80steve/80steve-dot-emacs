@@ -3,7 +3,7 @@
 ;;; Code:
 (require 'python)
 
-(venv-workon "emacs")
+(pyvenv-workon "emacs")
 (defvar py-electric-colon-active-p)
 (defvar py-electric-colon-greedy-p)
 (defvar py-electric-colon-newline-and-indent-p)

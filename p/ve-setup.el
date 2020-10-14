@@ -6,7 +6,8 @@
   :defer t
   :config
   (venv-initialize-interactive-shells)
-  (setq venv-localtion "~/.virtualenvs/")
+  :init
+  (setq venv-location "~/.virtualenvs/")
   )
 
 (provide 've-setup)

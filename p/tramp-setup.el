@@ -3,7 +3,7 @@
 ;;; Code:
 
 (use-package tramp
-  :defer 2
+  :defer 1
   :config
   (setq tramp-default-method "ssh")
   )

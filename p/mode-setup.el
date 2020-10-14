@@ -3,13 +3,12 @@
 ;;; Code:
 
 (use-package exec-path-from-shell
-  :defer 2
+  :defer 1
   :init
   (defvar exec-path-from-shell-variables)
   (setq exec-path-from-shell-variables (quote ("PATH" "NVM_PATH" "GOPATH")))
   :config
   (when (memq window-system '(mac ns x))
-    exec-path-from-shell-variables
     (exec-path-from-shell-initialize))
   )
 

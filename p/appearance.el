@@ -1,9 +1,9 @@
 ;;; Package --- General Appearance of Emacs
 ;;; Code:
 ;;; Commentary:
-(load-theme 'spacemacs-dark t)
+(load-theme 'nord t)
 
-(set-face-attribute 'default nil :family "Hack" :height 110)
+(set-face-attribute 'default nil :family "Hack" :height 106)
 (setq-default line-spacing 0.16)
 
 (require 'powerline)
@@ -12,7 +12,7 @@
 (setq powerline-height 16)
 
 (use-package git-gutter
-  :defer 2
+  :defer 5
   :config
   (global-git-gutter-mode)
   )
