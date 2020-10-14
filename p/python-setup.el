@@ -17,14 +17,6 @@
 (setq-default flycheck-flake8rc
               (expand-file-name "~/.emacs.d/conf/flake8rc"))
 
-(use-package highlight-indentation
-  :defer t
-  :config
-  (set-face-background 'highlight-indentation-face "#454545")
-  (set-face-background 'highlight-indentation-current-column-face "#8A8A8A")
-  )
-(add-hook 'python-mode-hook 'highlight-indentation-mode)
-
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
 

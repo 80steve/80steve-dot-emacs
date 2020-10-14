@@ -9,12 +9,7 @@
   :defer t
   :config
   (setq magit-last-seen-setup-instructions "1.4.0")
-  (magit-todos-mode)
   (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
-  )
-
-(use-package magit-todos
-  :defer t
   )
 
 (use-package magit-gitflow
