@@ -18,10 +18,12 @@
 (autoload 'js2-mode "js-setup" "Js Mode." t)
 (autoload 'js-mode "js-setup" "Js Mode." t)
 (autoload 'javascript-mode "js-setup" "Js Mode." t)
+(autoload 'typescript-mode "ts-setup" "TS Mode." t)
 
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.vue$" . web-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.tsx$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.php$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.module$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.inc$" . php-mode) auto-mode-alist))
@@ -68,6 +70,9 @@
 (add-hook 'web-mode-hook #'(lambda ()
                              (enable-minor-mode
                               '("\\.vue?\\'" . prettier-js-mode))))
+(add-hook 'web-mode-hook #'(lambda ()
+                             (enable-minor-mode
+                              '("\\.tsx?\\'" . prettier-js-mode))))
 
 (use-package emmet-mode
   :defer t
@@ -85,7 +90,10 @@
   (go-mode . lsp-deferred)
   (js-mode . lsp-deferred)
   (js2-mode . lsp-deferred)
+  (typescript-mode . lsp-deferred)
   :commands (lsp lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "C-c C-l")
   :config
   (setq lsp-prefer-flymake nil)
   )

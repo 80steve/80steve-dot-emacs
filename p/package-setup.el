@@ -19,7 +19,7 @@
         helm-ag helm-flx helm-projectile hungry-delete idle-highlight-mode js2-mode js2-refactor js-doc lsp-mode lsp-ui magit
         magit-gitflow markdown-mode multiple-cursors neotree nord-theme org-bullets org-super-agenda origami php-mode
         pip-requirements powerline prettier-js projectile pyvenv py-isort rainbow-delimiters react-snippets scss-mode smartparens
-        use-package web-mode window-numbering writeroom-mode yaml-mode yapfify yasnippet)
+        typescript-mode use-package web-mode window-numbering writeroom-mode yaml-mode yapfify yasnippet)
   "Editor Package To Be Installed At Startup.")
 
 (defun editor-packages-installed-p ()
