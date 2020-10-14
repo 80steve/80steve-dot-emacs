@@ -200,6 +200,12 @@
 (global-set-key (kbd "C-c n")
                 (lambda () (interactive) (find-file "~/Documents/OrgMode/notes.org")))
 
+(require 'writeroom-mode)
+(with-eval-after-load 'writeroom-mode
+  (define-key writeroom-mode-map (kbd "C-M-<") #'writeroom-decrease-width)
+  (define-key writeroom-mode-map (kbd "C-M->") #'writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd "C-M-=") #'writeroom-adjust-width))
+
 ;; make sure the marked window stay where it is
 (require 'dedicated)
 (global-set-key (kbd "C-c z d") 'dedicated-mode)

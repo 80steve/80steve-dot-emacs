@@ -55,9 +55,9 @@
   )
 
 (use-package prettier-js-mode
-:defer t
-:bind ("C-c C-p" . prettier-js)
-)
+  :defer t
+  :bind ("C-c C-p" . prettier-js)
+  )
 
 (defun enable-minor-mode (my-pair)
   "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
@@ -81,7 +81,10 @@
 
 (use-package lsp-mode
   :defer t
-  :hook (go-mode . lsp-deferred)
+  :hook
+  (go-mode . lsp-deferred)
+  (js-mode . lsp-deferred)
+  (js2-mode . lsp-deferred)
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
@@ -101,10 +104,6 @@
   (setq lsp-ui-flycheck-live-reporting t)
   )
 
-(use-package company-lsp
-  :defer t
-  )
-
 
 ;; Modeline Setup
 (use-package diminish
@@ -119,6 +118,11 @@
   (eval-after-load "anzu" '(diminish 'anzu-mode))
   (eval-after-load "golden-ratio" '(diminish 'golden-ratio-mode " G "))
   )
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
 
 (provide 'mode-setup)
 ;;; mode-setup ends here
