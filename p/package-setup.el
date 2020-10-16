@@ -17,7 +17,7 @@
         dedicated diminish editorconfig emmet-mode expand-region exec-path-from-shell flycheck flycheck-color-mode-line
         git-gutter git-link git-timemachine github-browse-file go-eldoc go-mode go-guru go-fill-struct graphql-mode helm
         helm-ag helm-flx helm-projectile hungry-delete idle-highlight-mode js2-mode js2-refactor js-doc lsp-mode lsp-ui magit
-        magit-gitflow markdown-mode multiple-cursors neotree nord-theme org-bullets org-super-agenda origami php-mode
+        magit-gitflow markdown-mode multiple-cursors neotree noccur nord-theme org-bullets org-super-agenda origami php-mode
         pip-requirements powerline prettier-js projectile pyvenv py-isort rainbow-delimiters react-snippets scss-mode smartparens
         typescript-mode use-package web-mode window-numbering writeroom-mode yaml-mode yapfify yasnippet)
   "Editor Package To Be Installed At Startup.")
