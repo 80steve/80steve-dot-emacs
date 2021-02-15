@@ -20,6 +20,7 @@
 (autoload 'javascript-mode "js-setup" "Js Mode." t)
 (autoload 'typescript-mode "ts-setup" "TS Mode." t)
 
+
 (setq auto-mode-alist (cons '("\\.html$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html.php$" . web-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.vue$" . web-mode) auto-mode-alist))
@@ -31,10 +32,10 @@
 (setq auto-mode-alist (cons '("\\.engine$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.yml$" . yaml-mode) auto-mode-alist))
 
-(setq auto-mode-alist (cons '("\\.jsx$" . react-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.react.js$" . react-mode) auto-mode-alist))
-(add-to-list 'magic-mode-alist '("/\\*\\* @jsx React\\.DOM \\*/" . react-mode))
-(add-to-list 'magic-mode-alist '("^import React" . react-mode))
+;; (setq auto-mode-alist (cons '("\\.jsx$" . react-mode) auto-mode-alist))
+;; (setq auto-mode-alist (cons '("\\.react.js$" . react-mode) auto-mode-alist))
+;; (add-to-list 'magic-mode-alist '("/\\*\\* @jsx React\\.DOM \\*/" . react-mode))
+;; (add-to-list 'magic-mode-alist '("^import React" . react-mode))
 
 (use-package web-mode
   :defer t
@@ -55,6 +56,10 @@
   (setq web-mode-enable-auto-pairing t)
   (emmet-mode)
   )
+
+;; (setq prettier-js-args '(
+;;                          "--html-whitespace-sensitivity" "ignore"
+;;                          ))
 
 (use-package prettier-js-mode
   :defer t
@@ -91,11 +96,23 @@
   (js-mode . lsp-deferred)
   (js2-mode . lsp-deferred)
   (typescript-mode . lsp-deferred)
+  (web-mode . lsp-deferred)
   :commands (lsp lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c C-l")
+  (setq lsp-completion-enable t)
+  (setq lsp-enable-snippet t)
+  (setq lsp-keep-workspace-alive t)
+  (setq lsp-enable-xref t)
+  (setq lsp-enable-imenu t)
   :config
   (setq lsp-prefer-flymake nil)
+  (setq company-backends
+        '((company-files
+           company-keywords
+           company-capf
+           )
+          (company-abbrev company-dabbrev)))
   )
 
 (use-package lsp-ui
@@ -108,8 +125,13 @@
   (setq lsp-ui-doc-position 'top)
   (setq lsp-ui-doc-include-signature t)
   (setq lsp-ui-peek-enable t)
+  (setq lsp-ui-peek-always-show t)
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-flycheck-live-reporting t)
+  :bind (:map lsp-ui-mode-map
+              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+              ([remap xref-find-references] . lsp-ui-peek-find-references)
+              ("C-c u" . lsp-ui-imenu))
   )
 
 

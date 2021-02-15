@@ -12,7 +12,7 @@
 (setq company-begin-commands '(self-insert-command))
 (setq company-selection-wrap-around t)
 (setq company-dabbrev-downcase nil)
-(setq company-minimum-prefix-length 0)
+(setq company-minimum-prefix-length 2)
 
 (defvar company-active-map)
 (define-key company-active-map (kbd "M-n") nil)
@@ -25,7 +25,7 @@
 (setq company-quickhelp-delay nil)
 
 (global-unset-key (kbd "C-M-i"))
-(global-set-key (kbd "C-M-i") 'company-complete)
+(global-set-key (kbd "C-M-i") 'company-capf)
 
 (add-to-list 'company-backends 'company-web-html)
 
