@@ -18,7 +18,13 @@
               (expand-file-name "~/.emacs.d/conf/flake8rc"))
 
 (require 'py-isort)
-(add-hook 'before-save-hook 'py-isort-before-save)
+(defun my-pysort-hook ()
+  "pop kill ring after isort."
+  (let ((org (car kill-ring)))
+    (py-isort-before-save)
+    (cond ((not (eq org (car kill-ring))) (pop kill-ring))))
+  )
+(add-hook 'before-save-hook 'my-pysort-hook)
 
 (defvar company-backends)
 (defun my-python-hook ()
