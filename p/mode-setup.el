@@ -32,10 +32,10 @@
 (setq auto-mode-alist (cons '("\\.engine$" . php-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.yml$" . yaml-mode) auto-mode-alist))
 
-;; (setq auto-mode-alist (cons '("\\.jsx$" . react-mode) auto-mode-alist))
-;; (setq auto-mode-alist (cons '("\\.react.js$" . react-mode) auto-mode-alist))
-;; (add-to-list 'magic-mode-alist '("/\\*\\* @jsx React\\.DOM \\*/" . react-mode))
-;; (add-to-list 'magic-mode-alist '("^import React" . react-mode))
+(setq auto-mode-alist (cons '("\\.jsx$" . react-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.react.js$" . react-mode) auto-mode-alist))
+(add-to-list 'magic-mode-alist '("/\\*\\* @jsx React\\.DOM \\*/" . react-mode))
+(add-to-list 'magic-mode-alist '("^import React" . react-mode))
 
 (use-package web-mode
   :defer t
@@ -50,10 +50,11 @@
 
   (setq web-mode-enable-css-colorization t)
   (setq web-mode-enable-current-element-highlight t)
+  (setq web-mode-enable-current-column-highlight t)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-enable-auto-pairing t)
+  (setq web-mode-enable-auto-pairing nil)
   (emmet-mode)
   )
 

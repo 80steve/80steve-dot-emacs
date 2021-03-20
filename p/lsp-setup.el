@@ -8,7 +8,7 @@
   (js-mode . lsp-deferred)
   (js2-mode . lsp-deferred)
   (typescript-mode . lsp-deferred)
-  (web-mode . lsp-deferred)
+  (vue-mode . lsp-deferred)
   :commands (lsp lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c C-l")
@@ -17,6 +17,7 @@
   (setq lsp-keep-workspace-alive t)
   (setq lsp-enable-xref t)
   (setq lsp-enable-imenu t)
+  :bind ("C-." . lsp-execute-code-action)
   :config
   (setq lsp-prefer-flymake nil)
   (setq company-backends
